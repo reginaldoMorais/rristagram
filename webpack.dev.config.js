@@ -13,18 +13,34 @@ module.exports = {
     publicPath: '/static/'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
   ],
   module: {
-    loaders: [{
+    loaders: [
+    // JSON
+    {
+      test: /\.json$/,
+      exclude: /node_modules/,
+      loader: 'json-loader'
+    },
+    // js
+    {
       test: /\.js$/,
       loaders: ['babel'],
       include: path.join(__dirname, 'src')
     },
+    // CSS
+    {
+      test: /\.(s?css)$/,
+      include: path.join(__dirname, 'assets'),
+      loaders: ['style', 'css', 'sass']
+    },
     { 
       test: /\.styl$/, 
-      include: path.join(__dirname, 'src/assets'),
+      include: path.join(__dirname, 'assets'),
       loader: 'style-loader!css-loader!stylus-loader'
-    }]
+    }
+    ]
   }
 };
