@@ -1,11 +1,10 @@
 import React from 'react';
-import Photo from './photo';
+import Photo from './Photo';
 
 class PhotoGrid extends React.Component {
   render() {
     return (
-      <div>
-        <h1> Olá Reginaldo</h1>
+      <div className="photo-grid">
         <Photo />
       </div>
     );

@@ -11,6 +11,6 @@ import '../assets/style.styl';
 //import { store, history } from './store';
 
 // Import components
-import PhotoGrid from './components/PhotoGrid';
+import Main from './components/Main';
 
-render(<PhotoGrid />, document.getElementById('app'));
+render(<Main />, document.getElementById('app'));
