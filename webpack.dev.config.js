@@ -27,18 +27,18 @@ module.exports = {
     // js
     {
       test: /\.js$/,
-      loaders: ['babel'],
-      include: path.join(__dirname, 'src')
+      include: path.join(__dirname, 'src'),
+      loaders: ['babel']
     },
     // CSS
     {
       test: /\.(s?css)$/,
-      include: path.join(__dirname, 'assets'),
+      include: path.join(__dirname, 'styles'),
       loaders: ['style', 'css', 'sass']
     },
     { 
       test: /\.styl$/, 
-      include: path.join(__dirname, 'assets'),
+      include: path.join(__dirname, 'styles'),
       loader: 'style-loader!css-loader!stylus-loader'
     }
     ]
